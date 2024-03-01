@@ -26,7 +26,7 @@ class About extends Component {
           <img src={imageV} id="image-v" alt="" />
         </div>
         <div className="about padding20">
-          <Grid container spacing={16}>
+          <Grid container spacing={8}>
             <Grid item xs={12}>
               <Typography
                 variant="h3"
@@ -90,7 +90,7 @@ class About extends Component {
               </Typography>
               <Typography variant="subtitle1" className="about-text">
                 No. In order to use ToroTutor, you will need to create an account.
-                You must register with your UP email address.
+                You must register with your toromail email address.
               </Typography>
             </Grid>
             <Grid item xs={12} md={4}>

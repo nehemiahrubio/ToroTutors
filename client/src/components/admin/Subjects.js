@@ -53,7 +53,7 @@ class Subjects extends Component {
         >
           Subjects
         </Typography>
-        <Grid container justify="center" spacing={24}>
+        <Grid container justifyContent="center" spacing={10}>
           <Grid item xs={12}>
             <div className="courses" />
           </Grid>

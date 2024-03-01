@@ -20,7 +20,7 @@ class UserConfirm extends Component {
   render() {
     return (
       <div className="padding20">
-        <Grid container spacing={24} justify="center">
+        <Grid container spacing={24} justifyContent="center">
           <Grid item xs={12} sm={8} md={6}>
             <Paper>
               <Card component={Link} to={"/login"}>

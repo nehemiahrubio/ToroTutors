@@ -100,7 +100,7 @@ const ProfileItem = (props) => {
           />
           <CardContent>
             <div className="spaceBelow">{classesCard}</div>
-            <Grid container wrap="nowrap" spacing={16}>
+            <Grid container wrap="nowrap" spacing={8}>
               <Grid item>
                 <MailIcon className="icon" />
               </Grid>
@@ -109,7 +109,7 @@ const ProfileItem = (props) => {
               </Grid>
             </Grid>
             {profile.bio && (
-              <Grid container wrap="nowrap" spacing={16}>
+              <Grid container wrap="nowrap" spacing={8}>
                 <Grid item>
                   <InfoIcon className="icon" />
                 </Grid>
@@ -119,7 +119,7 @@ const ProfileItem = (props) => {
               </Grid>
             )}
             {profile.availability && (
-              <Grid container wrap="nowrap" spacing={16}>
+              <Grid container wrap="nowrap" spacing={8}>
                 <Grid item>
                   <CalendarIcon className="icon" />
                 </Grid>

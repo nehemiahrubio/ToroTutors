@@ -49,7 +49,7 @@ const styles = (theme) => ({
 class ViewSubjects extends Component {
   state = {
     subjects: [],
-    errors: {},
+    errors: null, // Initialize with null
   };
 
   componentDidMount() {
@@ -57,7 +57,7 @@ class ViewSubjects extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) this.setState({ errors: nextProps.errors });
+    this.setState({ errors: nextProps.errors || {} });
     if (nextProps.subjects.subjects) {
       this.setState({
         subjects: _.sortBy(nextProps.subjects.subjects, ["name"]),

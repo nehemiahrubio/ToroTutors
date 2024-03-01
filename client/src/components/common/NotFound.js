@@ -10,7 +10,7 @@ import NotFoundImg from "../../images/page-not-found.jpg";
 function NotFound() {
   return (
     <div className="padding20">
-      <Grid container spacing={24} justify="center">
+      <Grid container spacing={10} justify-contents="center">
         <Grid item xs={12} sm={8} md={6}>
           <Paper>
             <Card component={Link} to={"/login"}>

@@ -22,6 +22,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import { fade } from "@material-ui/core/styles/colorManipulator";
+import { alpha } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -89,32 +90,32 @@ const styles = (theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    width: theme.spacing.unit * 7,
+    width: theme.spacing(7),
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing.unit * 9,
+      width: theme.spacing(9),
     },
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing(3),
     height: "100vh",
     overflow: "auto",
   },
   h5: {
-    marginBottom: theme.spacing.unit * 2,
+    marginBottom: theme.spacing(2),
   },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing.unit,
+      marginLeft: theme.spacing,
       width: "auto",
     },
   },

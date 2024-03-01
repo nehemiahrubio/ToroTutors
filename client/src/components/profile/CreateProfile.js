@@ -39,11 +39,13 @@ class CreateProfile extends Component {
     this.props.getSubjects();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) this.setState({ errors: nextProps.errors });
-    if (nextProps.subjects.subjects) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
+    }
+    if (prevProps.subjects.subjects !== this.props.subjects.subjects) {
       this.setState({
-        subjects: sortArrByAscending(nextProps.subjects.subjects, ["name"]),
+        subjects: sortArrByAscending(this.props.subjects.subjects, ["name"]),
       });
     }
   }
@@ -84,7 +86,7 @@ class CreateProfile extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const { bio, major, minor, availability, courses, type } = this.state;
-    const handle = this.props.auth.user.email.replace("@up.edu", "");
+    const handle = this.props.auth.user.email.replace("@toromail.csudh.edu", "");
 
     const profileData = {
       handle,
@@ -119,7 +121,7 @@ class CreateProfile extends Component {
         ]);
         courses[i].courseSubject = subject.name;
       }
-      this.setState({ [courses]: courses });
+      this.setState({ courses });
     } else {
       const { major, minor } = this.state;
       this.setState({ [e.target.name]: e.target.value });
@@ -219,33 +221,15 @@ class CreateProfile extends Component {
         </Grid>
       );
     });
-    ///enforcing major & type to be required
-    var validProfile = false;
-    if (major.length > 0 && type.length > 0) {
-      validProfile = true;
-    } else {
-      validProfile = false;
-    }
 
-    //courseId required for each new course
-    var validCourseIds = true;
-    if (courses.length > 0) {
-      for (var c in courses) {
-        let C = courses[c];
-        if (C.courseId.length > 0) {
-          validCourseIds = true;
-        } else {
-          validCourseIds = false;
-        }
-      }
-    }
-    //submit button invalid unless both are satisfied
-    var valid = false;
-    if (validCourseIds && validProfile) {
-      valid = true;
-    } else {
-      valid = false;
-    }
+    // enforcing major & type to be required
+    const validProfile = major.length > 0 && type.length > 0;
+
+    // courseId required for each new course
+    const validCourseIds = courses.length > 0 && courses.every((c) => c.courseId.length > 0);
+
+    // submit button invalid unless both are satisfied
+    const valid = validCourseIds && validProfile;
 
     return (
       <div className="padding20">
@@ -258,7 +242,7 @@ class CreateProfile extends Component {
           Create Tutor Profile
         </Typography>
         <form onSubmit={this.onSubmit}>
-          <Grid container spacing={24}>
+          <Grid container spacing={10}>
             <Grid item xs={12} sm={6} md={6}>
               <FormControl margin="normal" required fullWidth>
                 <InputLabel htmlFor="major">Major(s)</InputLabel>
@@ -343,7 +327,7 @@ class CreateProfile extends Component {
               </FormControl>
             </Grid>
           </Grid>
-          <Grid container spacing={24}>
+          <Grid container spacing={10}>
             <Grid item xs={12}>
               <div className="courses" />
             </Grid>
@@ -358,7 +342,7 @@ class CreateProfile extends Component {
               </Button>
             </Grid>
           </Grid>
-          <Grid container justify="flex-end" spacing={24}>
+          <Grid container justifyContent="flex-end" spacing={10}>
             <Grid item>
               <Button
                 aria-label="Cancel"

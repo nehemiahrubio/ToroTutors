@@ -138,7 +138,7 @@ class Dashboard extends Component {
     } else {
       dashboardContent =
         Object.keys(profile).length > 0 ? (
-          <Grid container spacing={24} justify="center">
+          <Grid container spacing={10} justify-content="center">
             <Grid item xs={12} sm={6} md={4}>
               <Card className={styles.card}>
                 <CardActionArea component={Link} to={"/edit-profile"}>
@@ -230,7 +230,7 @@ class Dashboard extends Component {
             )}
           </Grid>
         ) : (
-          <Grid container spacing={24} justify="center">
+          <Grid container spacing={10} justify-content="center">
             <Grid item xs={12} sm={6} md={4}>
               <Card className={styles.card}>
                 <CardActionArea component={Link} to={"/create-profile"}>

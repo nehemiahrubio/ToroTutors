@@ -279,7 +279,7 @@ class EditProfile extends Component {
           Edit Profile
         </Typography>
         <form onSubmit={this.onSubmit}>
-          <Grid container spacing={24}>
+          <Grid container spacing={10}>
             <Grid item xs={12} sm={6} md={6}>
               <FormControl margin="normal" required fullWidth>
                 <InputLabel htmlFor="major">Major(s)</InputLabel>
@@ -363,7 +363,7 @@ class EditProfile extends Component {
               </FormControl>
             </Grid>
           </Grid>
-          <Grid container spacing={24}>
+          <Grid container spacing={10}>
             <Grid item xs={12}>
               <div className="courses" />
             </Grid>
@@ -378,7 +378,7 @@ class EditProfile extends Component {
               </Button>
             </Grid>
           </Grid>
-          <Grid container justify="flex-end" spacing={24}>
+          <Grid container justify-contents="flex-end" spacing={10}>
             <Grid item>
               <Button
                 aria-label="Cancel"

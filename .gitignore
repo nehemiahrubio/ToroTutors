@@ -1,3 +1,4 @@
 node_modules
 
-/config/keys_test.js
+/config/keys_test.jssendgrid.env
+sendgrid.env

@@ -55,11 +55,18 @@ class EditSubjects extends Component {
     this.props.getSubjects();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) this.setState({ errors: nextProps.errors });
-    if (nextProps.subjects.subjects) {
+  componentDidUpdate(prevProps) {
+    // Check if errors or subjects have changed
+    if (this.props.errors !== prevProps.errors) {
+      this.setState({ errors: this.props.errors });
+    }
+
+    if (
+      this.props.subjects.subjects &&
+      this.props.subjects.subjects !== prevProps.subjects.subjects
+    ) {
       this.setState({
-        subjects: sortArrByAscending(nextProps.subjects.subjects, ["name"]),
+        subjects: sortArrByAscending(this.props.subjects.subjects, ["name"]),
       });
     }
   }
@@ -120,7 +127,7 @@ class EditSubjects extends Component {
         <Grid item xs={12} key={i}>
           <Card className="card" elevation={0}>
             <CardContent>
-              <Grid container spacing={24}>
+              <Grid container spacing={10}>
                 <Grid item xs={12} sm={4}>
                   <FormControl margin="normal" required fullWidth>
                     <InputLabel htmlFor={name}>Subject Name</InputLabel>
@@ -222,7 +229,7 @@ class EditSubjects extends Component {
         >
           Create and Edit Subjects
         </Typography>
-        <Grid container justify="space-between" spacing={24}>
+        <Grid container justifyContent="space-between" spacing={10}>
           <Grid item xs={12}>
             <div className="courses" />
           </Grid>
