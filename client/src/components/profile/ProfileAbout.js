@@ -19,23 +19,24 @@ class ProfileAbout extends Component {
   render() {
     const { profile } = this.props;
 
+    if (!profile || !profile.user) {
+      // Handle the case where profile or user is undefined
+      return null; // or return a placeholder/error message
+    }
+
     // Create initials and short version of name for use on card
     const firstname = profile.user.firstname;
     const lastname = profile.user.lastname;
-    const initials =
-      firstname && lastname ? firstname.charAt(0) + lastname.charAt(0) : "";
-    const shortname =
-      firstname && lastname ? firstname + " " + lastname.charAt(0) + "." : "";
+    const initials = firstname && lastname ? firstname.charAt(0) + lastname.charAt(0) : "";
+    const shortname = firstname && lastname ? firstname + " " + lastname.charAt(0) + "." : "";
 
     // Skill List
     const classes =
-      profile.courses !== undefined ? (
+      profile.courses && profile.courses.length > 0 ? (
         profile.courses.map((myClass, index) => (
           <Chip
             key={index}
-            label={`${myClass.courseId} ${myClass.courseNumber}: ${
-              myClass.courseName
-            }`}
+            label={`${myClass.courseId} ${myClass.courseNumber}: ${myClass.courseName}`}
             className="chip"
             variant="outlined"
           />
@@ -69,7 +70,7 @@ class ProfileAbout extends Component {
         <CardContent>
           <div className="spaceBelow">{classes}</div>
 
-          <Grid container wrap="nowrap" spacing={16}>
+          <Grid container wrap="nowrap" spacing={8}>
             <Grid item>
               <MailIcon className="icon" />
             </Grid>
@@ -78,7 +79,7 @@ class ProfileAbout extends Component {
             </Grid>
           </Grid>
           {profile.bio && (
-            <Grid container wrap="nowrap" spacing={16}>
+            <Grid container wrap="nowrap" spacing={8}>
               <Grid item>
                 <InfoIcon className="icon" />
               </Grid>
@@ -88,7 +89,7 @@ class ProfileAbout extends Component {
             </Grid>
           )}
           {profile.availability && (
-            <Grid container wrap="nowrap" spacing={16}>
+            <Grid container wrap="nowrap" spacing={8}>
               <Grid item>
                 <CalendarIcon className="icon" />
               </Grid>

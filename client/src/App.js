@@ -1,5 +1,6 @@
 import React, { Component, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from 'react-redux';
 import "./App.css";
 
 // Redux related
@@ -79,15 +80,12 @@ const App = ({ classes }) => {
               <Route exact path="/" component={AppLanding} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/profile/user/:handle" component={props => <Profile {...props} />}/>
-              <PrivateRoute
-                exact
-                path="/profiles"
-                component={ProfileShowcase}
+              <Route exact path="/profile/:handle" component={Profile}/>
+              <PrivateRoute exact path="/profiles" component={ProfileShowcase}
               />
               <Route exact path="/not-found" component={NotFound} />
-              <Route exact path="/confirm/:id" component={props => <UserConfirm {...props} />}/>
-              <Route exact path="/about" component={About} />
+              <Route exact path="/confirm/:id" render={(props) => <UserConfirm {...props} />} />
+              <Route exact path="/about" render={(props) => <About {...props} classes={classes} />} />
               <PrivateRoute exact path="/profile" component={Dashboard} />
               <PrivateRoute
                 exact

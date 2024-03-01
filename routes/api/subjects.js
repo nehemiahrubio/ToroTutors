@@ -37,45 +37,50 @@ router.get("/", async (req, res) => {
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    for (var i = 0; i < req.body.subjects.length; i++) {
+  async (req, res) => {
+    const results = [];
+
+    for (let i = 0; i < req.body.subjects.length; i++) {
       const subject = req.body.subjects[i];
 
-      const { errors, isValid } = validateSubjectInput(subject);
+      // Extract fields from subject
+      const { id, name, isMajor, isMinor, isCourse } = subject;
 
-      // Check validation
-      if (!isValid) {
-        return res.status(400).json(errors);
-      }
+      // Create an object with the fields you want to save
+      const subjectFields = {
+        id,
+        name,
+        isMajor,
+        isMinor,
+        isCourse,
+        // Add any other fields you want to save
+      };
 
-      const subjectFields = {};
-      for (var key in subject) {
-        if (subject[key]) subjectFields[key] = subject[key].trim();
-      }
-      subjectFields.id = subject.id ? subject.id.trim() : "";
+      try {
+        const existingSubject = await Subject.findOne({ _id: subject._id });
 
-      console.log(subjectFields);
-
-      // See if there is already a subject with the subject ID
-      Subject.findOne({ _id: subject._id }).then((subject) => {
-        if (subject) {
-          // Subject already exists
-          Subject.findOneAndUpdate(
+        if (existingSubject) {
+          const updatedSubject = await Subject.findOneAndUpdate(
             { _id: subject._id },
             { $set: subjectFields },
             { new: true }
-          ).then((subject) => res.json(subject));
+          );
+          results.push(updatedSubject);
+        } else {
+          const newSubject = await new Subject(subjectFields).save();
+          results.push(newSubject);
         }
-        // Subject does not already exist
-        else {
-          new Subject(subjectFields)
-            .save()
-            .then((subject) => res.json(subject));
-        }
-      });
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Internal Server Error" });
+        return; // Stop the loop if an error occurs
+      }
     }
+
+    res.json(results);
   }
 );
+
 
 // @route   DELETE api/subjects
 // @desc    Delete a subject by id

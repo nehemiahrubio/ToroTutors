@@ -17,24 +17,25 @@ class Profile extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.profile.profile === null && this.props.profile.loading) {
+    const { profile, loading } = nextProps.profile;
+    if (profile === null && loading) {
       this.props.history.push("/not-found");
     }
   }
 
   render() {
     const { profile, loading } = this.props.profile;
+  
     let profileContent;
-
-    profileContent =
-      profile === null || loading ? (
-        <ProgressSpinner />
-      ) : (
-        <div>
-          <ProfileAbout profile={profile} />
-        </div>
-      );
-
+  
+    profileContent = profile === null || loading ? (
+      <ProgressSpinner />
+    ) : (
+      <div>
+        <ProfileAbout profile={profile} />
+      </div>
+    );
+  
     return <div>{profileContent}</div>;
   }
 }

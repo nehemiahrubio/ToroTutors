@@ -159,37 +159,18 @@ router.post(
       const profile = await Profile.findOneAndUpdate(
         { user: req.body.userId },
         { $set: { disabled: true } }
-      ).then((profile) => {
-        res.json(profile);
-        User.findOneAndUpdate(
-          { _id: req.body.userId },
-          { $set: { disabled: true } }
-        ).then((user) => res.json(user));
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  }
-);
+      );
 
-router.post(
-  "/enableProfile",
-  passport.authenticate("jwt", { session: false }),
-  async (req, res) => {
-    try {
-      console.log(req.body.userId);
-      const profile = await Profile.findOneAndUpdate(
-        { user: req.body.userId },
-        { $set: { disabled: false } }
-      ).then((profile) => {
-        res.json(profile);
-        User.findOneAndUpdate(
-          { _id: req.body.userId },
-          { $set: { disabled: false } }
-        ).then((user) => res.json(user));
-      });
+      // Only send the response after both updates
+      const user = await User.findOneAndUpdate(
+        { _id: req.body.userId },
+        { $set: { disabled: true } }
+      );
+
+      res.json({ profile, user });
     } catch (err) {
       console.error(err);
+      res.status(500).json({ error: "Internal Server Error" });
     }
   }
 );

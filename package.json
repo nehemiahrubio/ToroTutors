@@ -38,6 +38,7 @@
     "@babel/core": "^7.0.0",
     "@material-ui/core": "^4.12.4",
     "@sendgrid/mail": "^8.1.1",
+    "axios-jwt": "^4.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "compression": "^1.7.4",

@@ -60,16 +60,14 @@ class EditSubjects extends Component {
     if (this.props.errors !== prevProps.errors) {
       this.setState({ errors: this.props.errors });
     }
-
-    if (
-      this.props.subjects.subjects &&
-      this.props.subjects.subjects !== prevProps.subjects.subjects
-    ) {
+  
+    if (this.props.subjects.subjects !== prevProps.subjects.subjects) {
       this.setState({
         subjects: sortArrByAscending(this.props.subjects.subjects, ["name"]),
       });
     }
   }
+  
 
   addSubject = (e) => {
     // push new subject to the top of the existing list
@@ -78,6 +76,22 @@ class EditSubjects extends Component {
       this.state.subjects
     );
     this.setState((prevState) => ({ subjects: newSubjects }));
+  };
+
+  onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const subjectData = {
+        subjects: this.state.subjects,
+      };
+
+      await this.props.createSubjects(subjectData, this.props.history);
+    } catch (error) {
+      console.error('Error creating subjects:', error);
+      // You can also update the state with an error message for user feedback
+      this.setState({ errors: { submit: 'Error creating subjects' } });
+    }
   };
 
   removeSubject = (id) => {
@@ -90,17 +104,11 @@ class EditSubjects extends Component {
       subjects: [...newSubjects],
     });
 
-    this.props.removeSubject(id, this.props.history);
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-
-    const subjectData = {
-      subjects: this.state.subjects,
-    };
-
-    this.props.createSubjects(subjectData, this.props.history);
+    this.props.removeSubject(id, this.props.history)
+      .catch((error) => {
+        console.error(`Error removing subject with ID ${id}:`, error);
+        // You can also update the state with an error message for user feedback
+      });
   };
 
   onChange = (e) => {
@@ -109,9 +117,9 @@ class EditSubjects extends Component {
     let dashPos = name.indexOf("-");
     let i = name.substring(dashPos + 1);
     let property = name.substring(0, dashPos);
-
+  
     subjects[i][property] = e.target.value;
-    this.setState({ [subjects]: subjects });
+    this.setState({ subjects: subjects });
   };
 
   // on cancel go back to dashboard to eliminate need for extra button
