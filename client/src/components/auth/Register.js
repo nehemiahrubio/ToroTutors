@@ -79,7 +79,7 @@ class Register extends Component {
     e.preventDefault();
 
     const { firstname, lastname, email, password, password2 } = this.state;
-    const upEmail = `${email}@up.edu`;
+    const upEmail = `${email}@toromail.csudh.edu`;
     const newUser = {
       firstname: firstname,
       lastname: lastname,
@@ -142,14 +142,14 @@ class Register extends Component {
             </FormControl>
             <span className="error">{errors.name}</span>
             <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">UP Username</InputLabel>
+              <InputLabel htmlFor="email">Username</InputLabel>
               <Input
                 id="email"
                 name="email"
                 autoComplete="email"
                 onChange={this.onChange}
                 endAdornment={
-                  <InputAdornment position="end">@up.edu</InputAdornment>
+                  <InputAdornment position="end">@toromail.csudh.edu</InputAdornment>
                 }
               />
             </FormControl>

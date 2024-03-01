@@ -1,14 +1,12 @@
-FROM node:10
+FROM node:20.11.0
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package*.json /usr/src/app
 
-RUN yarn
+RUN yarn install
 
-RUN yarn build
-
-COPY . .
+COPY . /usr/src/app
 
 EXPOSE 3000
 

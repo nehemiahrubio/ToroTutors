@@ -34,7 +34,7 @@ class About extends Component {
                 className="about-text"
                 id="lg-header"
               >
-                A peer tutoring network for University of Portland students.
+                A peer tutoring network for CSDUDH students.
               </Typography>
               <Typography
                 variant="h5"
@@ -42,7 +42,7 @@ class About extends Component {
                 className="about-text"
                 id="sm-header"
               >
-                A peer tutoring network for University of Portland students.
+                A peer tutoring network for CSUDH students.
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -53,7 +53,7 @@ class About extends Component {
                 Accessibility.
               </Typography>
               <Typography variant="subtitle1" className="about-text">
-                Tutor UP was created with accessibility in mind. Our goal is to
+                ToroTutor was created with accessibility in mind. Our goal is to
                 make academic aid more accessible for students of all majors.
               </Typography>
             </Grid>
@@ -62,7 +62,7 @@ class About extends Component {
                 Simplicity.
               </Typography>
               <Typography variant="subtitle1" className="about-text">
-                Simply register with your UP email to access the tutor search
+                Simply register with your toro email to access the tutor search
                 page!
               </Typography>
             </Grid>
@@ -86,10 +86,10 @@ class About extends Component {
             </Grid>
             <Grid item xs={12} md={4}>
               <Typography variant="h6" className="about-text" gutterBottom>
-                Is TutorUP connected to UP authentication?
+                Is ToroTutor connected to duo authentication?
               </Typography>
               <Typography variant="subtitle1" className="about-text">
-                No. In order to use TutorUP, you will need to create an account.
+                No. In order to use ToroTutor, you will need to create an account.
                 You must register with your UP email address.
               </Typography>
             </Grid>
@@ -99,7 +99,7 @@ class About extends Component {
               </Typography>
               <Typography variant="subtitle1" className="about-text">
                 In order to protect the information of our tutors, we want to
-                make sure only individuals from University of Portland can
+                make sure only individuals from CSUDH can
                 access the site.
               </Typography>
             </Grid>
@@ -123,7 +123,7 @@ class About extends Component {
                 gutterBottom
                 className="about-text"
               >
-                Developed 2019 by Alexa Baldwin, Danh Nguyen, and Elias Paraiso.
+                Developed 2023
               </Typography>
             </Grid>
           </Grid>

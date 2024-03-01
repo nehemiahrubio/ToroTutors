@@ -69,7 +69,7 @@ class Login extends Component {
     e.preventDefault();
 
     const { email, password } = this.state;
-    const upEmail = `${email}@up.edu`;
+    const upEmail = `${email}@toromail.csudh.edu`;
     const userData = {
       email: upEmail,
       password: password,
@@ -95,7 +95,7 @@ class Login extends Component {
           </Typography>
           <form className={classes.form} onSubmit={this.onSubmit}>
             <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">UP Username</InputLabel>
+              <InputLabel htmlFor="email">Username</InputLabel>
               <Input
                 id="email"
                 name="email"
@@ -103,7 +103,7 @@ class Login extends Component {
                 autoFocus
                 onChange={this.onChange}
                 endAdornment={
-                  <InputAdornment position="end">@up.edu</InputAdornment>
+                  <InputAdornment position="end">@toromail.csudh.edu</InputAdornment>
                 }
               />
             </FormControl>
