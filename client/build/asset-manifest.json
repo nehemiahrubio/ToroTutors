@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e5f70987.css",
+    "main.js": "/static/js/main.499c3770.js",
+    "static/media/background-8.png": "/static/media/background-8.69f0036bc2cd255e8672.png",
+    "static/media/background-6.png": "/static/media/background-6.df65aeaa3554f1a00651.png",
+    "static/media/background-7.png": "/static/media/background-7.f2edbd691ba71fd90f5b.png",
+    "static/media/background-1.png": "/static/media/background-1.73a9fbb679dc38fe96dd.png",
+    "static/media/background-2.png": "/static/media/background-2.2122762c7550889fc133.png",
+    "static/media/background-3.png": "/static/media/background-3.8e2b7e8fa702bff5ed71.png",
+    "static/media/background-4.png": "/static/media/background-4.0b2a8b91ece183858ded.png",
+    "static/media/page-not-found.jpg": "/static/media/page-not-found.33a55ebe26801645dea5.jpg",
+    "static/media/background-5.png": "/static/media/background-5.ae042bca330e31a234b6.png",
+    "static/media/confirmed-text.jpg": "/static/media/confirmed-text.a700c9c8070d1a6dc546.jpg",
+    "static/media/edit-subjects.jpg": "/static/media/edit-subjects.cccce866b0c733a442ae.jpg",
+    "static/media/delete-account.jpg": "/static/media/delete-account.994a1bc588160898c80c.jpg",
+    "static/media/enable-profile.jpg": "/static/media/enable-profile.49f2a4500899344f2ff2.jpg",
+    "static/media/disable-profile.jpg": "/static/media/disable-profile.3e45481e378cd439efaa.jpg",
+    "static/media/view-subjects.jpg": "/static/media/view-subjects.d5c6d6389bd9d08c378e.jpg",
+    "static/media/become-tutor.jpg": "/static/media/become-tutor.563473ae5d55d68d2dc5.jpg",
+    "static/media/background-1-v.png": "/static/media/background-1-v.64e81042d62d999d4a45.png",
+    "static/media/view-profile.jpg": "/static/media/view-profile.fb624467020acc123706.jpg",
+    "static/media/edit-profile.jpg": "/static/media/edit-profile.af16c29083a8b3835854.jpg",
+    "static/media/find-tutor.jpg": "/static/media/find-tutor.f812c59eef2ff8698c39.jpg",
+    "static/media/background-2-v.png": "/static/media/background-2-v.18afb9c5e7d12ae40dd2.png",
+    "static/media/background-3-v.png": "/static/media/background-3-v.5a1c09ee53a0c9c17ba6.png",
+    "static/media/background-4-v.png": "/static/media/background-4-v.2a620596a199a6485b61.png",
+    "static/media/background-5-v.png": "/static/media/background-5-v.d8057c8861a3e7ecdeab.png",
+    "static/media/background-8-v.png": "/static/media/background-8-v.c29b23f35fcd02fcba9c.png",
+    "static/media/background-6-v.png": "/static/media/background-6-v.3e19b062864c26482243.png",
+    "static/media/background-7-v.png": "/static/media/background-7-v.aee3c631a2465b10766e.png",
+    "static/media/background-logo.png": "/static/media/background-logo.2106aa79924a007b5ec5.png",
+    "static/media/logodark.png": "/static/media/logodark.2106aa79924a007b5ec5.png",
+    "index.html": "/index.html",
+    "main.e5f70987.css.map": "/static/css/main.e5f70987.css.map",
+    "main.499c3770.js.map": "/static/js/main.499c3770.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5f70987.css",
+    "static/js/main.499c3770.js"
+  ]
+}

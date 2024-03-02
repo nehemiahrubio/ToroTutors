@@ -1,0 +1,1 @@
+{"version":3,"file":"TokenRefreshRequest.d.ts","sourceRoot":"","sources":["../../src/TokenRefreshRequest.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAA;AAC/B,OAAO,EAAE,WAAW,EAAE,MAAM,eAAe,CAAA;AAE3C,MAAM,MAAM,mBAAmB,GAAG,CAAC,YAAY,EAAE,KAAK,KAAK,OAAO,CAAC,KAAK,GAAG,WAAW,CAAC,CAAA"}

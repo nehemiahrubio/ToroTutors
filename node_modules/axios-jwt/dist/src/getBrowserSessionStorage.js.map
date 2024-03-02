@@ -1,0 +1,1 @@
+{"version":3,"file":"getBrowserSessionStorage.js","sourceRoot":"","sources":["../../src/getBrowserSessionStorage.ts"],"names":[],"mappings":";;;AAAA,iEAA+D;AAExD,IAAM,wBAAwB,GAAG;IACtC,IAAI,OAAO,MAAM,KAAK,WAAW,EAAE;QACjC,OAAO,IAAI,6CAAqB,CAAC,MAAM,CAAC,cAAc,CAAC,CAAA;KACxD;AACH,CAAC,CAAA;AAJY,QAAA,wBAAwB,4BAIpC"}

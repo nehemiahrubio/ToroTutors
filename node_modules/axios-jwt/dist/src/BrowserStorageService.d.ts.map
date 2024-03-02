@@ -1,0 +1,1 @@
+{"version":3,"file":"BrowserStorageService.d.ts","sourceRoot":"","sources":["../../src/BrowserStorageService.ts"],"names":[],"mappings":"AAAA,qBAAa,qBAAqB;IAChC,OAAO,CAAC,QAAQ,CAAS;gBAEb,OAAO,EAAE,OAAO;IAItB,MAAM,CAAC,GAAG,EAAE,MAAM;IAIlB,GAAG,CAAC,GAAG,EAAE,MAAM;IAIf,GAAG,CAAC,GAAG,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM;CAGrC"}

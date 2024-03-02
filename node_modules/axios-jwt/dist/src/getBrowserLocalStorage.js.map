@@ -1,0 +1,1 @@
+{"version":3,"file":"getBrowserLocalStorage.js","sourceRoot":"","sources":["../../src/getBrowserLocalStorage.ts"],"names":[],"mappings":";;;AAAA,iEAA+D;AAExD,IAAM,sBAAsB,GAAG;IACpC,IAAI,OAAO,MAAM,KAAK,WAAW,EAAE;QACjC,OAAO,IAAI,6CAAqB,CAAC,MAAM,CAAC,YAAY,CAAC,CAAA;KACtD;AACH,CAAC,CAAA;AAJY,QAAA,sBAAsB,0BAIlC"}
